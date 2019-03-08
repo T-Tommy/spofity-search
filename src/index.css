@@ -2,4 +2,45 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Cambria, serif;
+}
+
+header {
+    background: darkslategrey;
+    color: lightcyan;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    text-shadow: 3px 3px 3px black;
+    letter-spacing: .2em;
+    padding-bottom: 1vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav button {
+    padding: 0 5px;
+}
+
+form {
+    padding-bottom: 1vh;
+}
+
+#page-nav {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#page-nav p {
+    margin: 5px;
 }
