@@ -1,17 +1,8 @@
+import { makeTrackRowTemplate, getArtists } from '../src/listing-component.js';
+
 const test = QUnit.test;
 
 QUnit.module('Template Test');
-
-function makeTrackRowTemplate(track) {
-    const template = document.createElement('template');
-    template.innerHTML = `
-        <tr>
-            <td>${track.name}</td>
-            <td>${getArtists(track.artists)}</td>
-        </tr>
-    `;
-    return template.content;
-}
 
 const track = {
     "album": {
@@ -114,11 +105,6 @@ test('Track row template', assert => {
     // Assert
     assert.htmlEqual(result, expected);
 });
-
-function getArtists(artistsArr) {
-    const artists = artistsArr.map(artist => artist.name);
-    return artists.join(', ');
-}
 
 test('Get artists', assert => {
     // Arrange
