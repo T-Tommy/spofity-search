@@ -1,13 +1,7 @@
+import { writeSearchToQuery } from '../src/hash-query.js';
 const test = QUnit.test;
 
 QUnit.module('Hash Query Test');
-
-function writeSearchToQuery(existingQuery, search) {
-    const params = new URLSearchParams(existingQuery);
-    params.set('search', search);
-    params.set('page', 1);
-    return params.toString();
-}
 
 test('Write search to existing query', assert => {
     // Arrange
