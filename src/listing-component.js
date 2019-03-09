@@ -16,8 +16,15 @@ export function getArtists(artistsArr) {
 
 const tbody = document.getElementById('track-tbody');
 export default function loadTracks(trackList) {
+    clearList();
     trackList.forEach(track => {
         const dom = makeTrackRowTemplate(track);
         tbody.appendChild(dom);
     });
+}
+
+function clearList() {
+    while(tbody.firstChild) {
+        tbody.firstChild.remove();
+    }
 }
