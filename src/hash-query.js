@@ -1,6 +1,14 @@
 export function writeSearchToQuery(existingQuery, search) {
-    const params = new URLSearchParams(existingQuery);
-    params.set('search', search);
-    params.set('page', 1);
-    return params.toString();
+    const searchParams = new URLSearchParams(existingQuery);
+    searchParams.set('search', search);
+    searchParams.set('page', 1);
+    return searchParams.toString();
+}
+
+export function readFromQuery(query) {
+    const searchParams = new URLSearchParams(query);
+    return {
+        search: searchParams.get('search'),
+        page: Number(searchParams.get('page'))
+    };
 }

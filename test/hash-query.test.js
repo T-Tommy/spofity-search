@@ -1,4 +1,4 @@
-import { writeSearchToQuery } from '../src/hash-query.js';
+import { writeSearchToQuery, readFromQuery } from '../src/hash-query.js';
 const test = QUnit.test;
 
 QUnit.module('Hash Query Test');
@@ -27,4 +27,18 @@ test('Write search to empty query', assert => {
 
     // Assert
     assert.equal(result, expected);
+});
+
+test('Read from query to create query object', assert => {
+    // Arrange
+    const expected = {
+        search: 'lost in japan',
+        page: 3
+    };
+    const query = 'search=lost+in+japan&page=3';
+    // Act
+    const result = readFromQuery(query);
+
+    // Assert
+    assert.deepEqual(result, expected);
 });
