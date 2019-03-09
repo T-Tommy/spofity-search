@@ -59,9 +59,9 @@ main {
 
 table {
     font-family: Calibri, sans-serif;
-    width: 75%;
+    width: 90%;
     min-width: 375px;
-    max-width: 600px;
+    max-width: 750px;
     border-collapse: collapse;
     box-shadow: 0 0 1px 1px black;
 }
@@ -87,6 +87,6 @@ tbody tr:hover {
 }
 
 th, td {
-    padding: 1%;
-    padding-left: 5%;
+    padding: 1vh;
+    padding-left: 2vw;
 }
