@@ -13,3 +13,11 @@ export function getArtists(artistsArr) {
     const artists = artistsArr.map(artist => artist.name);
     return artists.join(', ');
 }
+
+const tbody = document.getElementById('track-tbody');
+export default function loadTracks(trackList) {
+    trackList.forEach(track => {
+        const dom = makeTrackRowTemplate(track);
+        tbody.appendChild(dom);
+    });
+}
