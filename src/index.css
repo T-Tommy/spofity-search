@@ -6,11 +6,11 @@
 }
 
 body {
-    background: slategrey;
+    background: linear-gradient(0deg, slategrey 0%, darkslategrey 80%);
 }
 
 header {
-    background: darkslategrey;
+
     font-family: Cambria, serif;
     color: rgb(218, 235, 251);
     padding: 2vh;
@@ -66,27 +66,28 @@ table {
     box-shadow: 0 0 1px 1px black;
 }
 
-th {
-    background: darkslategray;
-    color: rgb(218, 235, 251);
-    letter-spacing: .1em;
-    text-shadow: 2px 2px 2px black;
-}
 
 tbody tr {
-    background: gray;
-    color: lightgray;
+    background: rgba(128, 128, 128, 0.4);
+    color: rgb(228, 228, 228);
     font-weight: 500;
     cursor: pointer;
     transition: background .3s, color .3s ease;
 }
 
 tbody tr:hover {
-    background: lightgray;
-    color: gray
+    background: rgba(150, 150, 150, .5);
 }
 
 th, td {
     padding: 1vh;
     padding-left: 2vw;
+    letter-spacing: 1px;
+}
+
+th {
+    background: darkslategray;
+    color: rgb(218, 235, 251);
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 2px black;
 }
