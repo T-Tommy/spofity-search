@@ -1,6 +1,7 @@
 const form = document.getElementById('form');
-
+const searchBar = document.getElementById('search-bar');
 form.addEventListener('submit', event => {
     event.preventDefault();
-    console.log('poop');
+    const searchTerm = searchBar.value;
+    console.log(searchTerm);
 });
