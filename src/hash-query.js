@@ -17,7 +17,8 @@ export function updateHash(callback, queryOption) {
     window.location.hash = newQuery;
 }
 
-export function readFromQuery(existingQuery) {
+export function readFromQuery() {
+    const existingQuery = window.location.hash.slice(1);
     const searchParams = new URLSearchParams(existingQuery);
     return {
         search: searchParams.get('search'),

@@ -14,8 +14,7 @@ loadPage();
 window.addEventListener('hashchange', loadPage);
 
 function loadPage() {
-    const existingQuery = window.location.hash.slice(1);
-    const queryOptions = readFromQuery(existingQuery);
+    const queryOptions = readFromQuery();
     const url = makeApiSearchUrl(queryOptions);
     if(check(url)) {
         message.textContent = 'Search for a song!';
@@ -24,7 +23,7 @@ function loadPage() {
     fetchSpotifyApi(url, results => {
         displayParams(queryOptions, results.tracks.total);
         if(check(results.tracks.items.length)) {
-            message.textContent = 'No results found!';
+            message.textContent = 'No results found';
             return;
         }
         loadTracks(results.tracks.items);
@@ -37,10 +36,9 @@ function check(condition) {
         pageNav.classList.add('hidden');
         message.classList.remove('hidden');
         return true;
-    } else {
-        trackTable.classList.remove('hidden');
-        pageNav.classList.remove('hidden');
-        message.classList.add('hidden');
-        return false;
     }
+    trackTable.classList.remove('hidden');
+    pageNav.classList.remove('hidden');
+    message.classList.add('hidden');
+    return false;
 }
