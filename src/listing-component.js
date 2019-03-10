@@ -9,22 +9,6 @@ export function makeTrackRowTemplate(track) {
     return template.content;
 }
 
-export function makeTrackTableTemplate() {
-    const template = document.createElement('template');
-    template.innerHTML = `
-        <table id="track-table">
-            <thead>
-                <tr>
-                    <th>TITLE</th>
-                    <th>ARTIST</th>
-                </tr>
-            </thead>
-            <tbody id="track-tbody"></tbody>
-        </table>
-    `;
-    return template.content;
-}
-
 export function getArtists(artistsArr) {
     const artists = artistsArr.map(artist => artist.name);
     return artists.join(', ');
