@@ -4,6 +4,8 @@ import './search-component.js';
 import displayParams from './display-params.js';
 import { readFromQuery } from './hash-query.js';
 import makeApiSearchUrl from './make-api-search-url.js';
+import fetchSpotifyApi from './fetch-spotify-api.js';
+
 
 
 if(window.location.hash.slice(1)) {
@@ -16,6 +18,8 @@ function loadPage() {
     const exisitingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(exisitingQuery);
     const url = makeApiSearchUrl(queryOptions);
-    console.log(url);
-    loadTracks(trackList.tracks.items);
+    fetchSpotifyApi(url, results => {
+        displayParams();
+        loadTracks(results.tracks.items);
+    });
 }
