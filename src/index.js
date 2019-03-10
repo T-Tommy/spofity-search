@@ -4,6 +4,7 @@ import displayParams from './display-params.js';
 import { readFromQuery } from './hash-query.js';
 import makeApiSearchUrl from './make-api-search-url.js';
 import fetchSpotifyApi from './fetch-spotify-api.js';
+import './paging-component.js';
 
 loadPage();
 
