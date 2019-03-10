@@ -1,11 +1,14 @@
-import { readFromQuery } from './hash-query.js';
-
 const searchBar = document.getElementById('search-bar');
 const currentPageNode = document.getElementById('current-page');
+const totalPagesNode = document.getElementById('total-pages');
+const previousButton = document.getElementById('previous-button');
+const nextButton = document.getElementById('next-button');
 
-export default function displayParams() {
-    const existingQuery = window.location.hash.slice(1);
-    const queryOptions = readFromQuery(existingQuery);
+export default function displayParams(queryOptions, totalTracks) {
     searchBar.value = queryOptions.search;
     currentPageNode.textContent = queryOptions.page;
+    const totalPagesNumber = Math.ceil(totalTracks / 15);
+    totalPagesNode.textContent = totalPagesNumber;
+    previousButton.disabled = queryOptions.page === 1;
+    nextButton.disabled = queryOptions.page === totalPagesNumber;
 }

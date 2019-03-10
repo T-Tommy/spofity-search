@@ -17,11 +17,11 @@ function loadPage() {
     const queryOptions = readFromQuery(existingQuery);
     const url = makeApiSearchUrl(queryOptions);
     if(check(url)) {
-        message.textContent = 'Start a search!';
+        message.textContent = 'Search for a song!';
         return;
     }
     fetchSpotifyApi(url, results => {
-        displayParams();
+        displayParams(queryOptions, results.tracks.total);
         if(check(results.tracks.items.length)) {
             message.textContent = 'No results found!';
             return;
