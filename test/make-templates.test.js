@@ -116,3 +116,25 @@ test('Get artists', assert => {
     // Assert
     assert.equal(result, expected);
 });
+
+
+test('Track table template', assert => {
+    // Arrange
+    const expected = `
+        <table id="track-table">
+            <thead>
+                <tr>
+                    <th>TITLE</th>
+                    <th>ARTIST</th>
+                </tr>
+            </thead>
+            <tbody id="track-tbody"></tbody>
+        </table>
+    `;
+
+    // Act
+    const result = makeTrackTableTemplate();
+
+    // Assert
+    assert.htmlEqual(result, expected);
+});
