@@ -1,4 +1,4 @@
-import { makeTrackRowTemplate, getArtists } from '../src/listing-component.js';
+import { makeTrackRowTemplate, makeTrackTableTemplate, getArtists } from '../src/listing-component.js';
 
 const test = QUnit.test;
 
