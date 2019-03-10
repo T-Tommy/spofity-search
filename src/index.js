@@ -15,8 +15,8 @@ if(window.location.hash.slice(1)) {
 window.addEventListener('hashchange', loadPage);
 
 function loadPage() {
-    const exisitingQuery = window.location.hash.slice(1);
-    const queryOptions = readFromQuery(exisitingQuery);
+    const existingQuery = window.location.hash.slice(1);
+    const queryOptions = readFromQuery(existingQuery);
     const url = makeApiSearchUrl(queryOptions);
     fetchSpotifyApi(url, results => {
         displayParams();
