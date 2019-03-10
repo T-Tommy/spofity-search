@@ -1,3 +1,19 @@
+const tbody = document.getElementById('track-tbody');
+
+export default function loadTracks(trackList) {
+    clearList();
+    trackList.forEach(track => {
+        const dom = makeTrackRowTemplate(track);
+        tbody.appendChild(dom);
+    });
+}
+
+function clearList() {
+    while(tbody.firstChild) {
+        tbody.firstChild.remove();
+    }
+}
+
 export function makeTrackRowTemplate(track) {
     const template = document.createElement('template');
     template.innerHTML = `
@@ -13,19 +29,3 @@ export function getArtists(artistsArr) {
     const artists = artistsArr.map(artist => artist.name);
     return artists.join(', ');
 }
-
-const tbody = document.getElementById('track-tbody');
-export default function loadTracks(trackList) {
-    clearList();
-    trackList.forEach(track => {
-        const dom = makeTrackRowTemplate(track);
-        tbody.appendChild(dom);
-    });
-}
-
-function clearList() {
-    while(tbody.firstChild) {
-        tbody.firstChild.remove();
-    }
-}
-

@@ -2,13 +2,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
 body {
     background: linear-gradient(0deg, silver 0%, darkslategrey 80%);
     background-attachment: fixed;
 }
+
 header {
 
     font-family: Cambria, serif;
@@ -39,10 +39,12 @@ nav button {
 form {
     padding-bottom: 1vh;
 }
+
 #message {
     letter-spacing: .1em;
     text-align: center;
 }
+
 #page-nav {
     letter-spacing: .1em;
     display: flex;
@@ -68,7 +70,6 @@ table {
     border-collapse: collapse;
     box-shadow: 0 0 1px 1px black;
 }
-
 
 tbody tr {
     background: rgba(128, 128, 128, 0.4);

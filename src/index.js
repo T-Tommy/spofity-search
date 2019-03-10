@@ -1,9 +1,9 @@
-import loadTracks from './listing-component.js';
-import displayParams from './display-params.js';
+import './event-component.js';
 import { readFromQuery } from './hash-query.js';
 import makeApiSearchUrl from './make-api-search-url.js';
 import fetchSpotifyApi from './fetch-spotify-api.js';
-import './event-component.js';
+import displayParams from './display-params.js';
+import loadTracks from './listing-component.js';
 
 const trackTable = document.getElementById('track-table');
 const pageNav = document.getElementById('page-nav');
