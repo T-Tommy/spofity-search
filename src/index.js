@@ -5,11 +5,7 @@ import { readFromQuery } from './hash-query.js';
 import makeApiSearchUrl from './make-api-search-url.js';
 import fetchSpotifyApi from './fetch-spotify-api.js';
 
-
-
-if(window.location.hash.slice(1)) {
-    displayParams();
-}
+loadPage();
 
 window.addEventListener('hashchange', loadPage);
 
@@ -17,8 +13,12 @@ function loadPage() {
     const existingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(existingQuery);
     const url = makeApiSearchUrl(queryOptions);
+    if(!url) {
+        return;
+    }
     fetchSpotifyApi(url, results => {
         displayParams();
         loadTracks(results.tracks.items);
     });
 }
+
