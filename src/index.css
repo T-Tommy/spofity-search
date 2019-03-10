@@ -39,7 +39,10 @@ nav button {
 form {
     padding-bottom: 1vh;
 }
-
+#message {
+    letter-spacing: .1em;
+    text-align: center;
+}
 #page-nav {
     letter-spacing: .1em;
     display: flex;
@@ -90,4 +93,8 @@ th {
     color: rgb(218, 235, 251);
     letter-spacing: 5px;
     text-shadow: 2px 2px 2px black;
+}
+
+.hidden {
+    visibility: hidden;
 }
