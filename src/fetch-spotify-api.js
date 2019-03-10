@@ -8,24 +8,19 @@ const postOptions = {
     body: 'grant_type=client_credentials'
 };
 
-const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
-const basePostUrl = 'https://accounts.spotify.com/api/token';
-const postUrl = corsAnywhereUrl + basePostUrl;
+const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/';
+const API_TOKEN_URL = 'https://accounts.spotify.com/api/token';
+const postUrl = CORS_ANYWHERE_URL + API_TOKEN_URL;
 
 export default function fetchSpotifyApi(getUrl, callback) {
     fetch(postUrl, postOptions)
         .then(response => response.json())
-        .then(token => {
-            const getOptions = {
-                headers: {
-                    Authorization: `${token.token_type} ${token.access_token}`
-                }
-            };
-            return getOptions;
-        })
-        .then(getOptions => {
-            fetch(getUrl, getOptions)
-                .then(response => response.json())
-                .then(callback);
-        });
+        .then(token => ({
+            headers: {
+                Authorization: `${token.token_type} ${token.access_token}`
+            }
+        }))
+        .then(getOptions => fetch(getUrl, getOptions))
+        .then(response => response.json())
+        .then(callback);
 }
