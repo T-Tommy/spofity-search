@@ -1,4 +1,3 @@
-import trackList from '../data/data.js';
 import loadTracks from './listing-component.js';
 import './search-component.js';
 import displayParams from './display-params.js';
