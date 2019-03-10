@@ -1,13 +1,14 @@
 import loadTracks from './listing-component.js';
-import './search-component.js';
 import displayParams from './display-params.js';
 import { readFromQuery } from './hash-query.js';
 import makeApiSearchUrl from './make-api-search-url.js';
 import fetchSpotifyApi from './fetch-spotify-api.js';
-import './paging-component.js';
+import './event-component.js';
+
 const trackTable = document.getElementById('track-table');
 const pageNav = document.getElementById('page-nav');
 const message = document.getElementById('message');
+
 loadPage();
 
 window.addEventListener('hashchange', loadPage);

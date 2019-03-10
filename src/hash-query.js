@@ -11,8 +11,14 @@ export function writePageToQuery(existingQuery, page) {
     return searchParams.toString();
 }
 
-export function readFromQuery(query) {
-    const searchParams = new URLSearchParams(query);
+export function updateHash(callback, queryOption) {
+    const existingQuery = window.location.hash.slice(1);
+    const newQuery = callback(existingQuery, queryOption);
+    window.location.hash = newQuery;
+}
+
+export function readFromQuery(existingQuery) {
+    const searchParams = new URLSearchParams(existingQuery);
     return {
         search: searchParams.get('search'),
         page: Number(searchParams.get('page'))
