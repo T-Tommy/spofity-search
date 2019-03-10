@@ -17,3 +17,18 @@ test('Make URL for API Search', assert => {
     // Assert
     assert.equal(result, expected);
 });
+
+test('Return empty string if no search', assert => {
+    // Arrange
+    const expected = '';
+    const queryOptions = {
+        search: '',
+        page: 1
+    };
+    
+    // Act
+    const result = makeApiSearchUrl(queryOptions);
+
+    // Assert
+    assert.equal(result, expected);
+});

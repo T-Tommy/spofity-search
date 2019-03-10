@@ -1,4 +1,7 @@
 export default function makeApiSearchUrl(queryOptions) {
+    if(!queryOptions.search) {
+        return '';
+    }
     const API_URL = 'https://api.spotify.com/v1/search';
     const CORS_ANYWHERE_URL = 'https://cors-anywhere.herokuapp.com/';
     const PER_PAGE = 15;
