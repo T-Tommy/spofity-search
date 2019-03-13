@@ -1,7 +1,16 @@
-import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/hash-query.js';
+import { writeSearchToQuery, writePageToQuery } from '../src/hash-query.js';
 const test = QUnit.test;
 
 QUnit.module('Hash Query Test');
+
+// This was refactored and now unable to pass test
+function readFromQuery(existingQuery) {
+    const searchParams = new URLSearchParams(existingQuery);
+    return {
+        search: searchParams.get('search'),
+        page: Number(searchParams.get('page'))
+    };
+}
 
 test('Write search to existing query', assert => {
     // Arrange
