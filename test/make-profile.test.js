@@ -1,22 +1,8 @@
+import { makeProfileTemplate } from '../src/make-profile.js';
+
 const test = QUnit.test;
 
 QUnit.module('Make profile template');
-
-function makeProfileTemplate(user) {
-    const html = `
-        <section id="profile">
-            <div>
-                <img src="${user.photoURL}" alt="user icon">
-                <span>${user.displayName}</span>
-            </div>
-            <button id="logout">Logout</button>
-        </section>
-    `;
-
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
 
 test('Make profile template', assert => {
     // Arrange

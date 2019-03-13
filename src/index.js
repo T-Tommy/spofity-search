@@ -4,11 +4,14 @@ import makeApiSearchUrl from './make-api-search-url.js';
 import fetchSpotifyApi from './fetch-spotify-api.js';
 import displayParams from './display-params.js';
 import loadTracks from './listing-component.js';
+import { auth } from './firebase.js';
+import loadProfile from './make-profile.js';
 
 const trackTable = document.getElementById('track-table');
 const pageNav = document.getElementById('page-nav');
 const message = document.getElementById('message');
 
+loadProfile();
 loadPage();
 
 window.addEventListener('hashchange', loadPage);
@@ -42,3 +45,4 @@ function check(condition) {
     message.classList.add('hidden');
     return false;
 }
+
