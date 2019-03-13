@@ -14,6 +14,7 @@ export default function loadTracks(trackList) {
         tr.addEventListener('click', () => {
             if(tr.classList.contains('favorite')) {
                 tr.classList.remove('favorite');
+                userFavoriteTrackRef.remove();
             } else {
                 tr.classList.add('favorite');
                 userFavoriteTrackRef.set({
