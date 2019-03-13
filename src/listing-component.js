@@ -9,7 +9,18 @@ export default function loadTracks(trackList) {
 
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
-        const userFavoriteTrackRef = userFavoritesRef.child(track.name);
+        const userFavoriteTrackRef = userFavoritesRef.child(track.id);
+        
+        userFavoriteTrackRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                if(value) {
+                    tr.classList.add('favorite');
+                } else {
+                    tr.classList.remove('favorite');
+                }
+            });
+
 
         tr.addEventListener('click', () => {
             if(tr.classList.contains('favorite')) {
@@ -18,6 +29,7 @@ export default function loadTracks(trackList) {
             } else {
                 tr.classList.add('favorite');
                 userFavoriteTrackRef.set({
+                    id: track.id,
                     name: track.name,
                     artist: getArtists(track.artists),
                 });
