@@ -1,1 +1,1 @@
-# spofity-search
+# Spofity Search
