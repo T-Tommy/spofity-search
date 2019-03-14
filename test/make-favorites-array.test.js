@@ -2,7 +2,7 @@ const test = QUnit.test;
 
 QUnit.module('Make favorites array');
 
-import { makeFavoritesArray } from '../src/favorites.js';
+import { makeFavoritesArray } from '../src/make-favorites-array';
 
 test('make favorites array', assert => {
     // Arrange
