@@ -1,5 +1,6 @@
 import loadProfile from './make-profile.js';
 import { auth, favoritesByUserRef } from './firebase.js';
+import loadTracks from './listing-component.js';
 
 loadProfile();
 
@@ -8,7 +9,8 @@ auth.onAuthStateChanged(user => {
     userFavoritesRef.once('value')
         .then(snapshot => {
             const value = snapshot.val();
-            console.log(value);
+            const favoritesArray = makeFavoritesArray(value);
+            loadTracks(favoritesArray);
         });
 });
 
@@ -17,6 +19,8 @@ export function makeFavoritesArray(data) {
     const values = keys.map(key => data[key]);
     return values;
 }
+
+
 
 
 // const userFavoritesRef = favoritesByUserRef.child(auth.currentUser.uid);
