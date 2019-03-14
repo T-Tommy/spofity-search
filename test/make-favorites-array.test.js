@@ -2,16 +2,24 @@ const test = QUnit.test;
 
 QUnit.module('Make favorites array');
 
+import { makeFavoritesArray } from '../src/favorites.js';
+
 test('make favorites array', assert => {
     // Arrange
     const testData = {
-        abc: {}
-    }
-    const expected = 
+        abc: { name: 'abc' },
+        def: { name: 'def' },
+        ghi: { name: 'ghi' }
+    };
+    const expected = [
+        { name: 'abc' },
+        { name: 'def' },
+        { name: 'ghi' }
+    ];
 
     // Act
-    const result = 
+    const result = makeFavoritesArray(testData);
 
     // Assert
-    assert.equal(result, expected);
+    assert.deepEqual(result, expected);
 });
