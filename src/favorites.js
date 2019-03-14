@@ -1,6 +1,7 @@
 import loadProfile from './make-profile.js';
 import { auth, favoritesByUserRef } from './firebase.js';
 import loadTracks from './listing-component.js';
+import { makeFavoritesArray } from './make-favorites-array.js';
 
 loadProfile();
 
@@ -12,15 +13,3 @@ auth.onAuthStateChanged(user => {
         loadTracks(favoritesArray);
     });
 });
-
-export function makeFavoritesArray(data) {
-    const keys = Object.keys(data);
-    const values = keys.map(key => data[key]);
-    return values;
-}
-
-
-
-
-// const userFavoritesRef = favoritesByUserRef.child(auth.currentUser.uid);
-
