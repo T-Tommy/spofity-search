@@ -46,11 +46,12 @@ function clearList() {
 }
 
 export function makeTrackRowTemplate(track) {
+    // const artist = track.artist || getArtists(track.artists);
     const template = document.createElement('template');
     template.innerHTML = `
         <tr>
             <td>${track.name}</td>
-            <td>${getArtists(track.artists)}</td>
+            <td>${track.artist || getArtists(track.artists)}</td>
         </tr>
     `;
     return template.content;

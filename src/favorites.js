@@ -6,12 +6,11 @@ loadProfile();
 
 auth.onAuthStateChanged(user => {
     const userFavoritesRef = favoritesByUserRef.child(user.uid);
-    userFavoritesRef.once('value')
-        .then(snapshot => {
-            const value = snapshot.val();
-            const favoritesArray = makeFavoritesArray(value);
-            loadTracks(favoritesArray);
-        });
+    userFavoritesRef.on('value', snapshot => {
+        const value = snapshot.val();
+        const favoritesArray = makeFavoritesArray(value);
+        loadTracks(favoritesArray);
+    });
 });
 
 export function makeFavoritesArray(data) {

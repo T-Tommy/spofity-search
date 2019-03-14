@@ -1,0 +1,7 @@
+.favorite {
+    background-color:  rgba(128, 128, 128, 0.4);
+}
+
+.favorite:hover {
+    background-color: rgba(124, 17, 3, 0.5);
+}
