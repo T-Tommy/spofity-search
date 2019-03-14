@@ -8,8 +8,16 @@ loadProfile();
 auth.onAuthStateChanged(user => {
     const userFavoritesRef = favoritesByUserRef.child(user.uid);
     userFavoritesRef.on('value', snapshot => {
+
         const value = snapshot.val();
-        const favoritesArray = makeFavoritesArray(value);
-        loadTracks(favoritesArray);
+        if(!value) {
+            const trackTable = document.getElementById('track-table');
+            trackTable.classList.add('hidden');
+            const message = document.getElementById('message');
+            message.classList.remove('hidden');
+        } else {
+            const favoritesArray = makeFavoritesArray(value);
+            loadTracks(favoritesArray);
+        }
     });
 });
