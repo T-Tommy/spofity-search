@@ -5,3 +5,7 @@
 .favorite:hover {
     background-color: rgba(124, 17, 3, 0.5);
 }
+
+a {
+    margin-top: 15px;
+}

@@ -36,6 +36,10 @@ nav button {
     cursor: pointer;
 }
 
+nav a {
+    align-self: center;
+}
+
 form {
     padding-bottom: 1vh;
 }
