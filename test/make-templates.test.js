@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { makeTrackRowTemplate, getArtists } from '../src/listing-component.js';
 
 const test = QUnit.test;
