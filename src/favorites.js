@@ -15,6 +15,7 @@ auth.onAuthStateChanged(user => {
             trackTable.classList.add('hidden');
             const message = document.getElementById('message');
             message.classList.remove('hidden');
+            return;
         } else {
             const favoritesArray = makeFavoritesArray(value);
             loadTracks(favoritesArray);
