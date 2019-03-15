@@ -5,7 +5,7 @@ const config = {
     projectId: 'spofity-search',
 };
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 

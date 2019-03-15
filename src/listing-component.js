@@ -1,8 +1,10 @@
 import { auth, favoritesByUserRef } from './firebase.js';
-const tbody = document.getElementById('track-tbody');
 
-export default function loadTracks(trackList) {
-    clearList();
+export default function loadTracks(trackList, tbody) {
+    while(tbody.firstChild) {
+        tbody.firstChild.remove();
+    }
+
     trackList.forEach(track => {
         const dom = makeTrackRowTemplate(track);
         const tr = dom.querySelector('tr');
@@ -11,15 +13,14 @@ export default function loadTracks(trackList) {
         const userFavoritesRef = favoritesByUserRef.child(userId);
         const userFavoriteTrackRef = userFavoritesRef.child(track.id);
         
-        userFavoriteTrackRef.once('value')
-            .then(snapshot => {
-                const value = snapshot.val();
-                if(value) {
-                    tr.classList.add('favorite');
-                } else {
-                    tr.classList.remove('favorite');
-                }
-            });
+        userFavoriteTrackRef.on('value', snapshot => {
+            const value = snapshot.val();
+            if(value) {
+                tr.classList.add('favorite');
+            } else {
+                tr.classList.remove('favorite');
+            }
+        });
 
 
         tr.addEventListener('click', () => {
@@ -37,12 +38,6 @@ export default function loadTracks(trackList) {
         });
         tbody.appendChild(dom);
     });
-}
-
-function clearList() {
-    while(tbody.firstChild) {
-        tbody.firstChild.remove();
-    }
 }
 
 export function makeTrackRowTemplate(track) {

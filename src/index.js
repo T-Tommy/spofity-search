@@ -9,6 +9,7 @@ import loadProfile from './make-profile.js';
 const trackTable = document.getElementById('track-table');
 const pageNav = document.getElementById('page-nav');
 const message = document.getElementById('message');
+const trackTbody = document.getElementById('track-tbody');
 
 loadProfile();
 loadPage();
@@ -23,12 +24,12 @@ function loadPage() {
         return;
     }
     fetchSpotifyApi(url, results => {
-        displayParams(queryOptions, results.tracks.total);
+        displayParams(queryOptions);
         if(check(results.tracks.items.length)) {
             message.textContent = 'No results found';
             return;
         }
-        loadTracks(results.tracks.items);
+        loadTracks(results.tracks.items, trackTbody);
     });
 }
 

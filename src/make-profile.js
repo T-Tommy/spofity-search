@@ -16,16 +16,20 @@ export function makeProfileTemplate(user) {
     return template.content;
 }
 
-const header = document.querySelector('header');
+// const header = document.querySelector('header');
 export default function loadProfile() {
     auth.onAuthStateChanged(user => {
         if(user) {
-            const dom = makeProfileTemplate(user);
-            const button = dom.querySelector('button');
-            button.addEventListener('click', () => {
+            const username = document.getElementById('username');
+            username.textContent = user.displayName;
+            const userIcon = document.getElementById('user-icon');
+            if(user.photoURL) {
+                userIcon.src = user.photoURL;
+            }
+            const logoutButton = document.getElementById('logout');
+            logoutButton.addEventListener('click', () => {
                 auth.signOut();
             });
-            header.prepend(dom);
         } else {
             window.location = './auth.html';
         }
