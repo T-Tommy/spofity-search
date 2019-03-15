@@ -62,26 +62,17 @@ article img {
 }
 
 #expanded {
+    position: relative;
     width: 380px;
     display: none;
     flex-direction: column;
     align-items: flex-start;
 }
 
-article table { 
-    box-shadow: none;
-}
-article #table-container {
-    position: absolute;
-    top: 5vh;
-    margin-top: 50px;
-    width: 100%;
-}
-
 article tbody {
     display: none;
     overflow-y: auto;
-    position: fixed;
+    position: absolute;
     margin-top: 68px;
     top: 7vh;
     bottom: 5vh;
@@ -89,16 +80,23 @@ article tbody {
     width: 100%;
 }
 
-article thead tr{
-    display: block;
+article ::-webkit-scrollbar {
+    width: 0;
 }
 
-article tbody td{
+article thead {
+    display: block;
+    position: absolute;
+    top: 5vh;
+    margin-top: 50px;
+    width: 100%;
+}
+
+article th, td{
     width: 190px;
 }
 
 article thead th {
-    width: 190px;
     background-color: gray;
 }
 
