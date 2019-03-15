@@ -14,24 +14,42 @@
 <body>
    <header>
         <h1>Spofity Search</h1>
-        <h2>Your Favorites</h2>
         <a href="./index.html">
             <button>
                 Back to Search
             </button>
         </a>
         <section id="message" class="hidden">You have no favorites</section>
-   </header>
-   <main>
-        <table id="track-table">
-            <thead>
-                <tr>
-                    <th>TITLE</th>
-                    <th>ARTIST</th>
-                </tr>
-            </thead>
-            <tbody id="track-tbody"></tbody>
-        </table>
+    </header>
+    <main>
+        <article>
+            <div id="permanent">
+                <img src="assets/heart.png" id="favorite-icon">
+                <div id="user-profile-icon">
+                    <img src="assets/user.png" id="user-icon">
+                    <img src="assets/cancel.png" id="logout-icon">
+                </div>
+            </div>
+            <div id="expanded">
+
+                <h2>Your Favorites</h2>
+                <div>
+                    <table id="favorites-table">
+                        <thead>
+                            <tr>
+                                <th>TITLE</th>
+                                <th>ARTIST</th>
+                            </tr>
+                        </thead>
+                        <tbody id="favorites-tbody"></tbody>
+                    </table>
+                </div>
+                <div id="user-container">
+                    <h2 id="username">Username</h2>
+                    <h2 id="logout">Logout</h2>
+                </div>
+            </div>
+        </article>
    </main>
    <footer>
    </footer>

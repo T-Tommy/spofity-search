@@ -1,11 +1,126 @@
-.favorite {
+article {
+    background: rgb(21, 42, 42);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    display: flex;
+    overflow: hidden;
+    transition: width .3s ease-in-out;
+}
+
+h2 {
+    font-family: Cambria, serif;
+    color: rgb(218, 235, 251);
+    text-shadow: 3px 3px 3px black;
+    letter-spacing: .2em;
+}
+
+article:hover {
+    width: 440px;
+}
+
+article:hover #expanded {
+    display: flex;
+}
+#permanent {
+    min-width: 60px;
+    background-color: rgb(106, 131, 131);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 75px;
+    padding-top: 50px;
+}
+
+#expanded {
+    width: 380px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#expanded h2 {
+    height: 50px;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+}
+
+#user-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#username {
+    margin-bottom: 25px;
+}
+
+#permanent img {
+    width: 50px;
+}
+
+#user-icon {
+    margin-bottom: 25px;
+    border-radius: 100%;
+}
+
+#user-profile-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article table {
+    margin-top: -200px;
+    width: 100%;
+    box-shadow: none;
+}
+
+article tbody {
+    display: block;
+    overflow: auto;
+    width: 380px;
+    height: 700px;
+}
+
+article thead tr{
+    display: block;
+}
+
+article tbody td{
+    width: 190px;
+}
+
+article thead th {
+    width: 190px;
+    background-color: gray;
+}
+
+
+article .favorite {
     background-color:  rgba(128, 128, 128, 0.4);
 }
 
-.favorite:hover {
+article .favorite:hover {
     background-color: rgba(124, 17, 3, 0.5);
 }
 
 a {
     margin-top: 15px;
+}
+
+#logout {
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+#logout:hover {
+    background-color: gray;
 }

@@ -6,6 +6,7 @@
     <title>Spofity</title>
     <link rel="stylesheet" href="./src/index.css">
     <link rel="stylesheet" href="./src/header.css">
+    <link rel="stylesheet" href="./src/favorites.css">
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
@@ -49,6 +50,35 @@
     </main>
     <footer>
     </footer>
+    <article>
+            <div id="permanent">
+                <img src="assets/heart.png" id="favorite-icon">
+                <div id="user-profile-icon">
+                    <img src="assets/user.png" id="user-icon">
+                    <img src="assets/cancel.png" id="logout-icon">
+                </div>
+            </div>
+            <div id="expanded">
+
+                <h2>Your Favorites</h2>
+                <div>
+                    <table id="favorites-table">
+                        <thead>
+                            <tr>
+                                <th>TITLE</th>
+                                <th>ARTIST</th>
+                            </tr>
+                        </thead>
+                        <tbody id="favorites-tbody"></tbody>
+                    </table>
+                </div>
+                <div id="user-container">
+                    <h2 id="username">Username</h2>
+                    <h2 id="logout">Logout</h2>
+                </div>
+            </div>
+        </article>
     <script type="module" src="./src/index.js"></script>
+    <script type="module" src="./src/favorites.js"></script>
 </body>
 </html>
