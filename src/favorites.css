@@ -73,7 +73,7 @@ article tbody {
     display: none;
     overflow-y: auto;
     position: absolute;
-    margin-top: 68px;
+    margin-top: 66px;
     top: 7vh;
     bottom: 5vh;
     margin-bottom: 140px;
@@ -90,6 +90,7 @@ article thead {
     top: 5vh;
     margin-top: 50px;
     width: 100%;
+    z-index: 1;
 }
 
 article th, td{
