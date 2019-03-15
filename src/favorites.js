@@ -9,7 +9,6 @@ auth.onAuthStateChanged(user => {
     const userFavoritesRef = favoritesByUserRef.child(user.uid);
     userFavoritesRef.on('value', snapshot => {
         const value = snapshot.val();
-        console.log(value);
         const favoritesTable = document.getElementById('favorites-table');
         if(!value) {
             favoritesTable.classList.add('hidden');

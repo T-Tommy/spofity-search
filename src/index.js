@@ -24,7 +24,7 @@ function loadPage() {
         return;
     }
     fetchSpotifyApi(url, results => {
-        displayParams(queryOptions, results.tracks.total);
+        displayParams(queryOptions);
         if(check(results.tracks.items.length)) {
             message.textContent = 'No results found';
             return;
