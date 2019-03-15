@@ -1,6 +1,6 @@
 article {
     background: rgb(21, 42, 42);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
@@ -10,11 +10,38 @@ article {
     transition: width .3s ease-in-out;
 }
 
-h2 {
-    font-family: Cambria, serif;
+article h2 {
+    display: flex;
+    align-items: center;
     color: rgb(218, 235, 251);
     text-shadow: 3px 3px 3px black;
     letter-spacing: .2em;
+    height: 50px;
+    width: 440px;
+    font-size: 23px;
+    padding-left: 7px;
+}
+
+#permanent {
+    min-width: 60px;
+    background-color: rgb(106, 131, 131);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favorites-nav {
+    position: absolute;
+    top: 5vh;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    position: absolute;
+    bottom: 5vh;
 }
 
 article:hover {
@@ -24,70 +51,42 @@ article:hover {
 article:hover #expanded {
     display: flex;
 }
-#permanent {
-    min-width: 60px;
-    background-color: rgb(106, 131, 131);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 75px;
-    padding-top: 50px;
+
+article:hover tbody {
+    display: block;
+
+}
+article img {
+    width: 50px;
+    border-radius: 100%;
 }
 
 #expanded {
     width: 380px;
-    padding-top: 50px;
-    padding-bottom: 75px;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
 }
 
-#expanded h2 {
-    height: 50px;
-    font-size: 23px;
-    display: flex;
-    align-items: center;
-    padding-left: 7px;
-}
-
-#user-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#username {
-    margin-bottom: 25px;
-}
-
-#permanent img {
-    width: 50px;
-}
-
-#user-icon {
-    margin-bottom: 25px;
-    border-radius: 100%;
-}
-
-#user-profile-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-article table {
-    margin-top: -200px;
-    width: 100%;
+article table { 
     box-shadow: none;
+}
+article #table-container {
+    position: absolute;
+    top: 5vh;
+    margin-top: 50px;
+    width: 100%;
 }
 
 article tbody {
-    display: block;
-    overflow: auto;
-    width: 380px;
-    height: 700px;
+    display: none;
+    overflow-y: auto;
+    position: fixed;
+    margin-top: 68px;
+    top: 7vh;
+    bottom: 5vh;
+    margin-bottom: 140px;
+    width: 100%;
 }
 
 article thead tr{
@@ -103,17 +102,12 @@ article thead th {
     background-color: gray;
 }
 
-
 article .favorite {
     background-color:  rgba(128, 128, 128, 0.4);
 }
 
 article .favorite:hover {
     background-color: rgba(124, 17, 3, 0.5);
-}
-
-a {
-    margin-top: 15px;
 }
 
 #logout {

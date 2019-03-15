@@ -10,7 +10,6 @@ body {
 }
 
 header {
-
     font-family: Cambria, serif;
     color: rgb(218, 235, 251);
     padding: 2vh;
@@ -94,6 +93,7 @@ th, td {
 }
 
 th {
+    font-size: 16px;
     background: darkslategray;
     color: rgb(218, 235, 251);
     letter-spacing: 5px;
